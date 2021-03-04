@@ -1,0 +1,42 @@
+body {
+  background-color: #000000;
+}
+
+#ship {
+  height: 100vh;
+  background-image: url(../img/mobile/marsFootMob.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+#index {
+  height: 100vh;
+  background-image: url(../img/mobile/marsBGmob.jpg), url(../img/mobile/earthBGmob.jpg);
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  #index {
+    background-image: url(../img/tablet/marsBGtab.jpg), url(../img/tablet/earthBGtab.jpg);
+  }
+
+  #ship {
+    background-image: url(../img/tablet/marsFootTab.jpg);
+  }
+}
+
+/* Laptops & Large Tablets */
+@media only screen and (min-width: 1024px) {
+  #ship {
+    background-image: url(../img/desktop/marsFootDesk.jpg);
+  }
+}
+
+/* Desktops & TV's */
+@media only screen and (min-width: 1250px) {
+  #index {
+    background-image: url(../img/desktop/marsBGdesk.jpg), url(../img/desktop/earthBGdesk.jpg);
+  }
+}
