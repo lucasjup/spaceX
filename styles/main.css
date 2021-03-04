@@ -1,18 +1,155 @@
+/* Gradient: linear-gradient(to top, #282741 0%, #dfa17c 100%) */
+
 body {
+  color: #F6F6F6;
   background-color: #000000;
 }
 
-#ship {
-  height: 100vh;
-  background-image: url(../img/mobile/marsFootMob.jpg);
-  background-position: bottom center;
-  background-repeat: no-repeat;
+h1 {
+  font-family: "stolzl", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+h2 {
+  font-family: "stolzl", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+p {
+  font-family: "stolzl", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1em;
+}
+
+a {
+  font-family: "stolzl", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: #F6F6F6;
 }
 
 #index {
   height: 100vh;
+  overflow: hidden;
   background-image: url(../img/mobile/marsBGmob.jpg), url(../img/mobile/earthBGmob.jpg);
   background-position: right top, left bottom;
+  background-repeat: no-repeat;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.infoHead {
+  position: fixed;
+  left: 0;
+  margin: 20px;
+}
+
+.infoHead p {
+  font-size: 0.7em;
+  color: #bbaab8;
+}
+
+.title {
+  margin: 20px auto;
+  align-self: center;
+}
+
+.indexHead > h2,
+.title > h2{
+  margin: 20px;
+}
+
+.indexHead {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btnIndex {
+  padding: 1em 2em;
+  margin: 2em auto;
+  border-radius: 10px;
+  box-shadow: 0 -4px 5px rgba(255, 255, 255, 0.2), 0 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 70px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+nav div {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  box-shadow: 0 -4px 5px rgba(255, 255, 255, 0.2), 0 4px 5px rgba(0, 0, 0, 0.4);
+  background-color: #000000;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav>div svg {
+  height: 40px;
+  max-width: 40px;
+  margin: 15px;
+  fill: #F6F6F6;
+}
+
+.menuActive {
+  opacity: 1;
+  color: #dfa17c;
+}
+
+.menuIcon {
+  height: 40px;
+  max-width: 40px;
+  margin-bottom: 5px;
+}
+
+.menuLabel {
+
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 300px;
+  width: 100%;
+}
+
+#marsImg {
+  background-image: url(../img/mobile/marsFootMob.png);
+  background-position: bottom center;
   background-repeat: no-repeat;
 }
 
@@ -22,15 +159,33 @@ body {
     background-image: url(../img/tablet/marsBGtab.jpg), url(../img/tablet/earthBGtab.jpg);
   }
 
-  #ship {
-    background-image: url(../img/tablet/marsFootTab.jpg);
+  #marsImg {
+    background-image: url(../img/tablet/marsFootTab.png);
+    height: 400px;
+  }
+
+  nav div {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menuIcon {
+    height: 60px;
+    max-width: 60px;
   }
 }
 
 /* Laptops & Large Tablets */
 @media only screen and (min-width: 1024px) {
-  #ship {
-    background-image: url(../img/desktop/marsFootDesk.jpg);
+  #marsImg {
+    background-image: url(../img/desktop/marsFootDesk.png);
+  }
+
+  nav {
+    left: 50px;
+    bottom: 20%;
+    height: 60%;
+    flex-direction: column;
   }
 }
 
