@@ -1,5 +1,3 @@
-/* Gradient: linear-gradient(to top, #282741 0%, #dfa17c 100%) */
-
 body {
   color: #F6F6F6;
   background-color: #000000;
@@ -43,14 +41,6 @@ a:active {
   color: #F6F6F6;
 }
 
-#index {
-  height: 100vh;
-  overflow: hidden;
-  background-image: url(../img/mobile/marsBGmob.jpg), url(../img/mobile/earthBGmob.jpg);
-  background-position: right top, left bottom;
-  background-repeat: no-repeat;
-}
-
 header {
   width: 100%;
   display: flex;
@@ -69,6 +59,17 @@ header {
   color: #bbaab8;
 }
 
+.infoHeadFlight {
+  display: none;
+}
+
+.indexHead {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .title {
   margin: 20px auto;
   align-self: center;
@@ -79,18 +80,17 @@ header {
   margin: 20px;
 }
 
-.indexHead {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .btnIndex {
   padding: 1em 2em;
-  margin: 2em auto;
-  border-radius: 10px;
-  box-shadow: 0 -4px 5px rgba(255, 255, 255, 0.2), 0 4px 5px rgba(0, 0, 0, 0.4);
+  margin: 2em auto 0 auto;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.1);
+}
+
+.btnIndex:hover {
+  transition: all 2s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 nav {
@@ -108,7 +108,8 @@ nav div {
   width: 75px;
   height: 75px;
   border-radius: 10px;
-  box-shadow: 0 -4px 5px rgba(255, 255, 255, 0.2), 0 4px 5px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  box-shadow: 0 -4px 5px rgba(255, 255, 255, 0.1), 0 4px 5px rgba(0, 0, 0, 0.4);
   background-color: #000000;
   opacity: 0.5;
   display: flex;
@@ -117,10 +118,15 @@ nav div {
   align-items: center;
 }
 
+nav div:hover {
+  transition: all 1s;
+  opacity: 1;
+}
+
 nav>div svg {
   height: 40px;
   max-width: 40px;
-  margin: 15px;
+  margin-bottom: 15px;
   fill: #F6F6F6;
 }
 
@@ -139,6 +145,46 @@ nav>div svg {
 
 }
 
+#index {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../img/mobile/marsBGmob.jpg), url(../img/mobile/earthBGmob.jpg);
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
+  animation: pulsePlanetsMob 4s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulsePlanetsMob {
+  0% {background-size: 50%}
+  50% {background-size: 48%}
+  100% {background-size: 50%}
+}
+
+#shipMain {
+  width: 85%;
+  margin: 25px auto 300px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 75px;
+  grid-template-areas:
+  "waterUse"
+  "hamster"
+  "travelTime"
+  "waterStore"
+}
+
+#shipMain article p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#shipWaterUse {grid-area: waterUse;}
+#shipHamster {grid-area: hamster;}
+#shipTravelTime {grid-area: travelTime;}
+#shipWaterStore {grid-area: waterStore;}
+
 footer {
   position: fixed;
   left: 0;
@@ -155,37 +201,101 @@ footer {
 
 /* Tablets */
 @media only screen and (min-width: 768px) {
+  #shipMain {
+    margin: 0 auto;
+    width: 700px;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 100px;
+    column-gap: 50px;
+    grid-template-areas:
+    "waterUse hamster"
+    "travelTime waterStore"
+  }
+
+  .infoHead p {
+    font-size: 0.7em;
+    color: #bbaab8;
+  }
+
+  .infoHeadFlight {
+    display: block;
+  }
+
+  .indexHead > h1 {
+    font-size: 4.5em;
+  }
+
+  .indexHead > h2 {
+    font-size: 2.5em;
+  }
+
+  .btnIndex {
+    padding: 1em 2em;
+    margin: 2em auto;
+    font-size: 2em;
+    border-radius: 75px;
+  }
+
+  nav div {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    border-radius: 40px;
+  }
+
+  nav>div svg {
+    height: 50px;
+    max-width: 50px;
+  }
+
+  .menuIcon {
+    height: 70px;
+    max-width: 70px;
+  }
+
   #index {
     background-image: url(../img/tablet/marsBGtab.jpg), url(../img/tablet/earthBGtab.jpg);
+    animation: pulsePlanetsTab 4s infinite;
+  }
+
+  @keyframes pulsePlanetsTab {
+    0% {background-size: 30%}
+    50% {background-size: 30.5%}
+    100% {background-size: 30%}
   }
 
   #marsImg {
     background-image: url(../img/tablet/marsFootTab.png);
     height: 400px;
   }
-
-  nav div {
-    width: 100px;
-    height: 100px;
-  }
-
-  .menuIcon {
-    height: 60px;
-    max-width: 60px;
-  }
 }
 
 /* Laptops & Large Tablets */
 @media only screen and (min-width: 1024px) {
-  #marsImg {
-    background-image: url(../img/desktop/marsFootDesk.png);
-  }
-
   nav {
     left: 50px;
     bottom: 20%;
     height: 60%;
     flex-direction: column;
+  }
+
+  #marsImg {
+    background-image: url(../img/desktop/marsFootDesk.png);
+  }
+
+  .indexHead > h1 {
+    font-size: 7em;
+  }
+
+  .indexHead > h2 {
+    font-size: 3em;
+  }
+
+  .btnIndex {
+    padding: 1.5em 3em;
+    margin: 2em auto;
+    font-size: 2em;
+    border-radius: 75px;
   }
 }
 
