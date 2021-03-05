@@ -85,9 +85,15 @@ var chartWaterUse = new Chart(ctx, {
 
 // Travel Time & Distance
 var ctx = document.getElementById('shipChartTravelTime').getContext('2d');
-var blueOrangeGrad = ctx.createLinearGradient(0, 0, 0, 200);
-blueOrangeGrad.addColorStop(0, "rgba(223, 161, 124, 1)");
-blueOrangeGrad.addColorStop(1, "rgba(40, 39, 65, 1)");
+var orangeGrad = ctx.createLinearGradient(0, 0, 0, 400);
+orangeGrad.addColorStop(0, "#e99e75");
+orangeGrad.addColorStop(1, "#44426e");
+var redGrad = ctx.createLinearGradient(0, 0, 0, 400);
+redGrad.addColorStop(0, "#ad627f");
+redGrad.addColorStop(1, "#e99e75");
+var blueGrad = ctx.createLinearGradient(0, 0, 0, 400);
+blueGrad.addColorStop(0, "#44426e");
+blueGrad.addColorStop(1, "#ad627f");
 var chartWaterUse = new Chart(ctx, {
     type: 'pie',
     data: {
@@ -100,9 +106,8 @@ var chartWaterUse = new Chart(ctx, {
           label: 'days',
           borderColor: '#000000',
           backgroundColor: [
-            '#e99e75',
-            '#ad627f',
-            '#44426e',
+            orangeGrad,
+            blueGrad,
           ],
           data: [150, 60]
         }
@@ -115,6 +120,15 @@ var chartWaterUse = new Chart(ctx, {
 
 // Water available
 var ctx = document.getElementById('shipChartWaterStore').getContext('2d');
+var orangeGrad = ctx.createLinearGradient(0, 0, 0, 400);
+orangeGrad.addColorStop(0, "#e99e75");
+orangeGrad.addColorStop(1, "#44426e");
+var redGrad = ctx.createLinearGradient(0, 0, 0, 400);
+redGrad.addColorStop(0, "#ad627f");
+redGrad.addColorStop(1, "#e99e75");
+var blueGrad = ctx.createLinearGradient(0, 0, 0, 200);
+blueGrad.addColorStop(0, "#44426e");
+blueGrad.addColorStop(1, "#ad627f");
 var chartWaterUse = new Chart(ctx, {
     type: 'pie',
     data: {
@@ -128,9 +142,9 @@ var chartWaterUse = new Chart(ctx, {
           label: 'Hamsters',
           borderColor: '#000000',
           backgroundColor: [
-            '#e99e75',
-            '#ad627f',
-            '#44426e',
+            orangeGrad,
+            redGrad,
+            blueGrad,
           ],
           data: [1100, 400, 100]
         }
