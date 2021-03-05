@@ -45,7 +45,7 @@ var ctx = document.getElementById('shipChartHamster').getContext('2d');
 var blueOrangeGrad = ctx.createLinearGradient(0, 0, 0, 150);
 blueOrangeGrad.addColorStop(0, "rgba(223, 161, 124, 1)");
 blueOrangeGrad.addColorStop(1, "rgba(40, 39, 65, 1)");
-var chartWaterUse = new Chart(ctx, {
+var chartHamster = new Chart(ctx, {
     type: 'line',
     data: {
       labels: [
@@ -94,7 +94,7 @@ redGrad.addColorStop(1, "#e99e75");
 var blueGrad = ctx.createLinearGradient(0, 0, 0, 400);
 blueGrad.addColorStop(0, "#44426e");
 blueGrad.addColorStop(1, "#ad627f");
-var chartWaterUse = new Chart(ctx, {
+var chartTravelTime = new Chart(ctx, {
     type: 'pie',
     data: {
       labels: [
@@ -129,7 +129,7 @@ redGrad.addColorStop(1, "#e99e75");
 var blueGrad = ctx.createLinearGradient(0, 0, 0, 200);
 blueGrad.addColorStop(0, "#44426e");
 blueGrad.addColorStop(1, "#ad627f");
-var chartWaterUse = new Chart(ctx, {
+var chartWaterStore = new Chart(ctx, {
     type: 'pie',
     data: {
       labels: [
