@@ -89,7 +89,7 @@ header {
 }
 
 .btnIndex:hover {
-  transition: all 2s ease-in-out;
+  transition: all 1s ease-in-out;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
@@ -104,7 +104,7 @@ nav {
   justify-content: space-around;
 }
 
-nav div {
+nav a {
   width: 75px;
   height: 75px;
   border-radius: 10px;
@@ -118,19 +118,19 @@ nav div {
   align-items: center;
 }
 
-nav div:hover {
+nav a:hover {
   transition: all 1s;
   opacity: 1;
 }
 
-nav>div svg {
+nav>a svg {
   height: 40px;
   max-width: 40px;
   margin-bottom: 15px;
   fill: #F6F6F6;
 }
 
-.menuActive {
+a.menuActive {
   opacity: 1;
   color: #dfa17c;
 }
@@ -141,10 +141,7 @@ nav>div svg {
   margin-bottom: 5px;
 }
 
-.menuLabel {
-
-}
-
+/* Index */
 #index {
   height: 100vh;
   overflow: hidden;
@@ -161,6 +158,8 @@ nav>div svg {
   100% {background-size: 50%}
 }
 
+
+/* Info Ship */
 #shipMain {
   width: 85%;
   margin: 25px auto 300px auto;
@@ -193,10 +192,19 @@ footer {
   width: 100%;
 }
 
-#marsImg {
-  background-image: url(../img/mobile/marsFootMob.png);
+#marsImg,
+#earthImg {
   background-position: bottom center;
   background-repeat: no-repeat;
+}
+
+#marsImg {
+  background-image: url(../img/mobile/marsFootMob.png);
+}
+
+#earthImg {
+  background-image: url(../img/mobile/earthFootMob.png);
+  background-color: #000000;
 }
 
 /* Tablets */
@@ -236,14 +244,14 @@ footer {
     border-radius: 75px;
   }
 
-  nav div {
+  nav a {
     width: 100px;
     height: 100px;
     padding: 15px;
     border-radius: 40px;
   }
 
-  nav>div svg {
+  nav>a svg {
     height: 50px;
     max-width: 50px;
   }
