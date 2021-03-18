@@ -203,8 +203,41 @@ footer {
 }
 
 #earthImg {
-  background-image: url(../img/mobile/earthFootMob.png);
-  background-color: #000000;
+  transition: background-image 1s;
+}
+
+#earth {
+  height: 100vh;
+}
+
+.timeSunLow {
+  background-image: linear-gradient(#DFA17C, #282741);
+}
+.timeMorning,
+.timeEvening {
+  background-image: linear-gradient(#44426E, #DFA17C);
+}
+.timeDay {
+  background-image: linear-gradient(#282741, #44426E);
+}
+.timeNight {
+  background-image: linear-gradient(#282741, #000000);
+}
+.timeStars {
+  background-image: linear-gradient(#000000, #000000);
+}
+
+.earthSunLow {
+  background-image: url(../img/mobile/earthFootMobSunLow.png);
+}
+.earthWarm {
+  background-image: url(../img/mobile/earthFootMobWarm.png);
+}
+.earthDay {
+  background-image: url(../img/mobile/earthFootMobDay.png);
+}
+.earthNight {
+  background-image: url(../img/mobile/earthFootMobNight.png);
 }
 
 /* Tablets */

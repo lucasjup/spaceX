@@ -1,5 +1,3 @@
-var today = new Date();
-
 function earthTime() {
 	var today = new Date();
 	var seconds = today.getSeconds();
@@ -37,13 +35,6 @@ function earthTime() {
     document.getElementById('earthImg').className = 'earthNight';
   }
 
-  // animates the clock every 10 seconds
-	if (seconds % 10 == 0) {
-		document.getElementById('earthTime').classList.add('animate');
-	} else if (seconds % 10 >= 5) {
-		document.getElementById('earthTime').classList.remove('animate');
-	}
-
   // Adds zero before 1 digit times
 	if (seconds < 10) {
 		seconds = '0' + seconds;
@@ -60,6 +51,7 @@ function earthTime() {
 }
 
 function earthDate() {
+  var today = new Date();
   var months = new Array('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december');
   document.getElementById('earthDate').innerHTML = today.getDate() + ' ' + months[today.getMonth()];
 }
@@ -67,4 +59,4 @@ function earthDate() {
 earthDate();
 earthTime();
 setInterval(earthTime, 1000);
-setInterval(earthDate, 3600000);
+setInterval(earthDate, 60000);
