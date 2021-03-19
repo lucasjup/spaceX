@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/nsf2tag.css">
   <link type="text/css" href="../styles/stylereset.css" rel="stylesheet" />
   <link type="text/css" href="../styles/main.css" rel="stylesheet" />
+  <link type="text/css" href="../styles/earth-time.css" rel="stylesheet" />
   <script src="../js/earthTime.js" defer></script>
 </head>
 
@@ -17,11 +18,6 @@
     <header>
       <section class="infoHead">
         <a href="../index.html"> X Close </a>
-        <p class="infoHeadFlight">
-          Flight: 0003 </br>
-          Departure: Space X, Earth </br>
-          Arrival: Central Elon, Mars
-        </p>
       </section>
       <section class="title">
         <h1>Space X</h1>
@@ -57,16 +53,18 @@
     </nav>
 
     <main id="earthMain">
-      <article id="earthTime">
-        18:40
-      </article>
-      <article id="earthDate">
-        19 March, 2030
-      </article>
-      <button onclick="toggleTimeTravel()">Watch the time cycle</button>
+      <article id="earthTime"></article>
+      <article id="earthDate"></article>
+      <button id="timeTravel" onclick="toggleTimeTravel()">
+        <p> Watch the day and night cycle </p>
+      </button>
     </main>
 
     <footer id="earthImg">
+      <div id="earthSunLow" class="earthHide"></div>
+      <div id="earthWarm" class="earthHide"></div>
+      <div id="earthDay" class="earthHide"></div>
+      <div id="earthNight" class="earthHide"></div>
     </footer>
 </body>
 

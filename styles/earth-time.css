@@ -1,0 +1,124 @@
+#earth {
+  height: 100vh;
+  transition: background-image 2s linear;
+}
+
+/* Gradient backgrounds */
+.timeSunUp,
+.timeSunDown,
+.timeNight {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  background-size: auto 300%;
+}
+
+
+.timeSunRise {
+  background-image: linear-gradient(#000000, #282741, #44426E, #DFA17C);
+  background-size: auto 300%;
+  animation-name: gradientUp;
+}
+
+.timeMorning {
+  background-image: linear-gradient(#DFA17C, #44426E);
+  animation-name: gradientUp;
+}
+
+.timeDay {
+  background-image: linear-gradient(#44426E, #282741);
+  animation-name: gradientUp;
+}
+
+.timeEvening {
+  background-image: linear-gradient(#44426E, #DFA17C);
+  animation-name: gradientUp;
+}
+
+.timeSunDown {
+  background-image: linear-gradient(#000000, #282741, #44426E, #DFA17C);
+  animation-name: gradientDown;
+}
+
+.timeNight {
+  background-image: linear-gradient(#000000, #282741, #44426E, #DFA17C);
+  animation-name: gradientUp;
+}
+
+@keyframes gradientUp {
+  0% {background-position: bottom;}
+  100% {background-position: top;}
+}
+
+@keyframes gradientDown {
+  0% {background-position: bottom;}
+  100% {background-position: top;}
+}
+
+/* Earth states */
+#earthSunLow {
+  background-image: url(../img/mobile/earthFootMobSunLow.png);
+}
+#earthWarm {
+  background-image: url(../img/mobile/earthFootMobWarm.png);
+}
+#earthDay {
+  background-image: url(../img/mobile/earthFootMobDay.png);
+}
+#earthNight {
+  background-image: url(../img/mobile/earthFootMobNight.png);
+}
+
+/* Add earth state transitions */
+#earthImg div {
+  position: fixed;
+  width: 100%;
+  height: 300px;
+  left: 0;
+  bottom: 0;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 1s ease-in-out;
+}
+
+.earthShow {
+  opacity: 1;
+}
+
+.earthHide {
+  opacity: 0;
+  transition-delay: 1s;
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  #earthSunLow {
+    background-image: url(../img/tablet/earthFootTabSunLow.png);
+  }
+  #earthWarm {
+    background-image: url(../img/tablet/earthFootTabWarm.png);
+  }
+  #earthDay {
+    background-image: url(../img/tablet/earthFootTabDay.png);
+  }
+  #earthNight {
+    background-image: url(../img/tablet/earthFootTabNight.png);
+  }
+}
+
+/* Laptops & Large Tablets */
+@media only screen and (min-width: 1024px) {
+  #earthSunLow {
+    background-image: url(../img/desktop/earthFootdeskSunLow.png);
+  }
+  #earthWarm {
+    background-image: url(../img/desktop/earthFootdeskWarm.png);
+  }
+  #earthDay {
+    background-image: url(../img/desktop/earthFootdeskDay.png);
+  }
+  #earthNight {
+    background-image: url(../img/desktop/earthFootdeskNight.png);
+  }
+}
