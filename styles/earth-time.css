@@ -1,100 +1,136 @@
 #earth {
-  height: 100vh;
-  background-image: linear-gradient(
-    #000000,
-    #282741,
-    #44426E,
-    #DFA17C,
-    #44426E,
-    #44426E);
-  background-size: 100vw 700vh;
-  background-repeat: no-repeat;
-  transition: background-position 2s ease-in-out 0s;
+	height: 100vh;
+	background-image: linear-gradient(#000000, #282741, #44426E, #DFA17C, #44426E, #44426E);
+	background-size: 100vw 700vh;
+	background-repeat: no-repeat;
+	transition: background-position 2s ease-in-out 0s;
 }
-
+#earthMain {
+	width: 85%;
+	margin: 50px auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "earthTime""earthDate""earthTimeTravel"
+}
+#earthTime {
+	grid-area: earthTime;
+	font-family: "stolzl", sans-serif;
+	font-weight: 300;
+	font-size: 4em;
+	text-align: center;
+}
+#earthDate {
+	grid-area: earthDate;
+	font-family: "stolzl", sans-serif;
+	font-weight: 100;
+	font-size: 1.5em;
+	text-align: center;
+}
+#timeTravel {
+	grid-area: earthTimeTravel;
+	font-family: "stolzl", sans-serif;
+	font-weight: 100;
+	line-height: 1.6em;
+	font-size: 1.2em;
+	text-align: center;
+	padding: 1.2em 2.4em;
+	margin-top: 3.6em;
+	border-radius: 20px;
+	border: 0;
+	z-index: 15;
+	box-shadow: 0 0 7px rgba(255, 255, 255, 0.1);
+}
 /* Gradient positions */
-.timeSunRise,
-.timeSunDown {
-  background-position: 0 50%;
-}
 
-.timeMorning,
-.timeEvening {
-  background-position: 0 66%;
+.timeSunRise, .timeSunDown {
+	background-position: 0 50%;
 }
-
+.timeMorning, .timeEvening {
+	background-position: 0 66%;
+}
 .timeDay {
-  background-position: 0 100%;
+	background-position: 0 100%;
 }
-
 .timeNight {
-  background-position: 0 0;
+	background-position: 0 0;
 }
 
 /* Earth states */
+
 #earthSunLow {
-  background-image: url(../img/mobile/earthFootMobSunLow.png);
+	background-image: url(../img/mobile/earthFootMobSunLow.png);
 }
 #earthWarm {
-  background-image: url(../img/mobile/earthFootMobWarm.png);
+	background-image: url(../img/mobile/earthFootMobWarm.png);
 }
 #earthDay {
-  background-image: url(../img/mobile/earthFootMobDay.png);
+	background-image: url(../img/mobile/earthFootMobDay.png);
 }
 #earthNight {
-  background-image: url(../img/mobile/earthFootMobNight.png);
+	background-image: url(../img/mobile/earthFootMobNight.png);
 }
 
 /* Add earth state transitions */
+
 #earthImg div {
-  position: fixed;
-  width: 100%;
-  height: 300px;
-  left: 0;
-  bottom: 0;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: opacity 2s ease-in-out;
+	position: fixed;
+	width: 100%;
+	height: 300px;
+	left: 0;
+	bottom: 0;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	transition: opacity 2s ease-in-out;
 }
-
 .earthShow {
-  opacity: 1;
+	opacity: 1;
 }
-
 .earthHide {
-  opacity: 0;
-  transition-delay: 2s;
+	opacity: 0;
+	transition-delay: 2s;
 }
 
 /* Tablets */
+
 @media only screen and (min-width: 768px) {
-  #earthSunLow {
-    background-image: url(../img/tablet/earthFootTabSunLow.png);
-  }
-  #earthWarm {
-    background-image: url(../img/tablet/earthFootTabWarm.png);
-  }
-  #earthDay {
-    background-image: url(../img/tablet/earthFootTabDay.png);
-  }
-  #earthNight {
-    background-image: url(../img/tablet/earthFootTabNight.png);
-  }
+	#earthMain {
+		width: 50%;
+	}
+	#earthSunLow {
+		background-image: url(../img/tablet/earthFootTabSunLow.png);
+	}
+	#earthWarm {
+		background-image: url(../img/tablet/earthFootTabWarm.png);
+	}
+	#earthDay {
+		background-image: url(../img/tablet/earthFootTabDay.png);
+	}
+	#earthNight {
+		background-image: url(../img/tablet/earthFootTabNight.png);
+	}
 }
 
 /* Laptops & Large Tablets */
+
 @media only screen and (min-width: 1024px) {
-  #earthSunLow {
-    background-image: url(../img/desktop/earthFootdeskSunLow.png);
-  }
-  #earthWarm {
-    background-image: url(../img/desktop/earthFootdeskWarm.png);
-  }
-  #earthDay {
-    background-image: url(../img/desktop/earthFootdeskDay.png);
-  }
-  #earthNight {
-    background-image: url(../img/desktop/earthFootdeskNight.png);
-  }
+	#earthMain {
+		width: 35%;
+	}
+	#earthImg div {
+		height: 400px;
+	}
+	#earthSunLow {
+		background-image: url(../img/desktop/earthFootdeskSunLow.png);
+	}
+	#earthWarm {
+		background-image: url(../img/desktop/earthFootdeskWarm.png);
+	}
+	#earthDay {
+		background-image: url(../img/desktop/earthFootdeskDay.png);
+	}
+	#earthNight {
+		background-image: url(../img/desktop/earthFootdeskNight.png);
+	}
 }

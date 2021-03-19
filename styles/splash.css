@@ -1,0 +1,190 @@
+body {
+  color: #F6F6F6;
+  background-color: #000000;
+}
+
+h1 {
+  font-family: "stolzl", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+h2 {
+  font-family: "stolzl", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+p {
+  font-family: "stolzl", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1em;
+}
+
+a {
+  font-family: "stolzl", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: #F6F6F6;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.infoHead {
+  position: fixed;
+  left: 0;
+  margin: 20px;
+}
+
+.infoHead p {
+  font-size: 0.7em;
+  color: #bbaab8;
+}
+
+.infoHeadFlight {
+  display: none;
+}
+
+.indexHead {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  margin: 20px auto;
+  align-self: center;
+}
+
+.indexHead,
+.title {
+  margin: 20px;
+}
+
+.btnIndex {
+  padding: 1em 2em;
+  margin: 2em auto 0 auto;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.1);
+}
+
+.btnIndex:hover {
+  transition: all 1s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Index */
+#index {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../img/mobile/marsBGmob.jpg), url(../img/mobile/earthBGmob.jpg);
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
+  animation: pulsePlanetsMob 4s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulsePlanetsMob {
+  0% {
+    background-size: 50%
+  }
+
+  50% {
+    background-size: 48%
+  }
+
+  100% {
+    background-size: 50%
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  .infoHead p {
+    font-size: 0.7em;
+    color: #bbaab8;
+  }
+
+  .infoHeadFlight {
+    display: block;
+  }
+
+  h1 {
+    font-size: 4.5em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .btnIndex {
+    padding: 1em 2em;
+    margin: 2em auto;
+    font-size: 2em;
+    border-radius: 75px;
+  }
+
+  #index {
+    background-image: url(../img/tablet/marsBGtab.jpg), url(../img/tablet/earthBGtab.jpg);
+    animation: pulsePlanetsTab 4s infinite;
+  }
+
+  @keyframes pulsePlanetsTab {
+    0% {
+      background-size: 30%
+    }
+
+    50% {
+      background-size: 30.5%
+    }
+
+    100% {
+      background-size: 30%
+    }
+  }
+}
+
+/* Laptops & Large Tablets */
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 7em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  .btnIndex {
+    padding: 1.5em 3em;
+    margin: 2em auto;
+    font-size: 2em;
+    border-radius: 75px;
+  }
+}
+
+/* Desktops & TV's */
+@media only screen and (min-width: 1250px) {
+  #index {
+    background-image: url(../img/desktop/marsBGdesk.jpg), url(../img/desktop/earthBGdesk.jpg);
+  }
+}
