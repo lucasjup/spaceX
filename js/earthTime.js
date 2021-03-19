@@ -1,6 +1,7 @@
 var timeTravel = false;
 var speedTime = 0;
 
+// changes appearance of elements based on the time
 function earthTime() {
 	var today = new Date();
 	var seconds = today.getSeconds();
@@ -58,18 +59,19 @@ function earthTime() {
 	document.getElementById('earthTime').innerHTML = hour + ':' + minutes + ':' + seconds;
 }
 
+// simulation of time passing by
 function earthTimeSpeed() {
   if (speedTime == 24) {
     speedTime = 0;
-  } else if ((speedTime >= 5 && speedTime < 8) || (speedTime >= 20 && speedTime < 23)) {
-    speedTime = speedTime + 0.5;
+  } else if ((speedTime >= 5 && speedTime < 8) || (speedTime >= 18 && speedTime < 23)) {
+    speedTime = speedTime + 0.25;
   } else {
     speedTime ++;
   };
 
   console.log(speedTime);
 
-  // changes appearance of elements based on the time
+  // changes appearance of elements based on the simulated time
   if (speedTime >= 6 && speedTime < 7) {
     // Sun rise
     document.getElementById('earth').className = 'timeSunRise';
@@ -134,8 +136,6 @@ function earthDate() {
 
 document.onload = animationTime();
 document.onload = earthDate();
-
-earthDate();
 
 setInterval(animationTime, 1000);
 setInterval(earthDate, 60000);
