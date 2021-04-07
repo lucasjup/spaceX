@@ -1,19 +1,28 @@
 #earth {
 	height: 100vh;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000), color-stop(#282741), color-stop(#44426E), color-stop(#DFA17C), color-stop(#44426E), to(#44426E));
+	background-image: -o-linear-gradient(#000000, #282741, #44426E, #DFA17C, #44426E, #44426E);
 	background-image: linear-gradient(#000000, #282741, #44426E, #DFA17C, #44426E, #44426E);
 	background-size: 100vw 700vh;
 	background-repeat: no-repeat;
+	-webkit-transition: background-position 2s ease-in-out 0s;
+	-o-transition: background-position 2s ease-in-out 0s;
 	transition: background-position 2s ease-in-out 0s;
 }
 #earthMain {
 	width: 85%;
 	margin: 50px auto;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
+	-ms-grid-rows: auto;
 	grid-template-rows: auto;
-	grid-template-areas: "earthTime""earthDate""earthTimeTravel"
+	    grid-template-areas: "earthTime""earthDate""earthTimeTravel"
 }
 #earthTime {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
 	grid-area: earthTime;
 	font-family: "stolzl", sans-serif;
 	font-weight: 300;
@@ -21,6 +30,8 @@
 	text-align: center;
 }
 #earthDate {
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
 	grid-area: earthDate;
 	font-family: "stolzl", sans-serif;
 	font-weight: 100;
@@ -28,6 +39,8 @@
 	text-align: center;
 }
 #timeTravel {
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
 	grid-area: earthTimeTravel;
 	font-family: "stolzl", sans-serif;
 	font-weight: 100;
@@ -39,7 +52,8 @@
 	border-radius: 20px;
 	border: 0;
 	z-index: 15;
-	box-shadow: 0 0 7px rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 0 7px rgba(255, 255, 255, 0.1);
+	        box-shadow: 0 0 7px rgba(255, 255, 255, 0.1);
 }
 /* Gradient positions */
 
@@ -82,6 +96,8 @@
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	-webkit-transition: opacity 2s ease-in-out;
+	-o-transition: opacity 2s ease-in-out;
 	transition: opacity 2s ease-in-out;
 }
 .earthShow {
@@ -89,7 +105,9 @@
 }
 .earthHide {
 	opacity: 0;
-	transition-delay: 2s;
+	-webkit-transition-delay: 2s;
+	     -o-transition-delay: 2s;
+	        transition-delay: 2s;
 }
 
 /* Tablets */

@@ -148,6 +148,7 @@ function toggleTimeTravel() {
 	} else {
 		timeTravel = false;
 		earthDate();
+		animationTime();
 		document.getElementById('timeTravel')
 			.innerHTML = "Watch the light cycle"
 	}
