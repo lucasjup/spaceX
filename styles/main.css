@@ -54,6 +54,9 @@ header {
 	margin: 20px auto;
 	align-self: center;
 }
+.title > a {
+	color: #ffffff;
+}
 nav {
 	position: fixed;
 	left: 0;
@@ -182,6 +185,7 @@ footer {
 		left: 50px;
 		bottom: 20%;
 		height: 60%;
+		width: auto;
 		flex-direction: column;
 	}
 	#marsImg {
